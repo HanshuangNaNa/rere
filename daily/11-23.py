@@ -149,7 +149,6 @@ class Solution:
  
     def reverse(self, head):
         res = ListNode(0)
-        index = res
         while head:
             temp = head.next
             head.next = res.next
