@@ -42,6 +42,30 @@ def isValid(s):
             return False
     return True
 
+#求逆波兰表达式的值
+def evalRPN(s):
+    stack = []
+    for char in s:
+        if char not in '+-*/':
+            stack.append(char)
+        else:
+            temp2 = int(stack.pop())
+            temp1 = int(stack.pop())
+            if char == '+':
+                stack.append(temp1+temp2)
+            elif char == '-':
+                stack.append(temp1-temp2)
+            elif char == '*':
+                stack.append(temp1*temp2)
+            elif char == '/':
+                stack.append(temp1/temp2)
+    return stack[0]
+
+
+#路径简化
+def road(s):
+    pass
+
 
 
 if __name__ == '__main__':
